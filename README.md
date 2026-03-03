@@ -1,12 +1,13 @@
 # pCloudCC Docker Build and Installation
 
-This repository contains Dockerfile and build scripts to create `.deb` packages of pCloudCC for Ubuntu 18.04, 22.04, and 24.04.
+This repository contains Dockerfile and build scripts to create `.deb` packages of pCloudCC for Ubuntu 18.04, 20.04, 22.04, and 24.04.
 
 ## Using Pre-built .deb Packages
 
 The `.deb` packages are already available in the `out` folder of this repository:
 
 - `pcloudcc_2.0.0-1-ubuntu18_amd64.deb`
+- `pcloudcc_2.0.0-1-ubuntu20_amd64.deb`
 - `pcloudcc_2.0.0-1-ubuntu22_amd64.deb`
 - `pcloudcc_2.0.0-1-ubuntu24_amd64.deb`
 
@@ -29,6 +30,7 @@ Run the build script to build `.deb` packages for all supported Ubuntu versions:
 This will create the following files in the `out` directory:
 
 - `pcloudcc_2.0.0-1-ubuntu18_amd64.deb`
+- `pcloudcc_2.0.0-1-ubuntu20_amd64.deb`
 - `pcloudcc_2.0.0-1-ubuntu22_amd64.deb`
 - `pcloudcc_2.0.0-1-ubuntu24_amd64.deb`
 - `libpcloudcc_lib.so` is included inside each `.deb`
@@ -43,6 +45,20 @@ sudo apt install libfuse2
 ```
 
 This ensures that `libfuse.so.2` is available for `pcloudcc`. On older Ubuntu versions, APT will simply confirm it is already installed.
+
+## Known Issues
+### BAD_LOGIN_TOKEN after reinstall/recompile
+If you see:
+```bash
+status is BAD_LOGIN_TOKEN
+```
+The stored authentication token may be invalid.
+Fix:
+```bash
+rm -rf ~/.pcloud/
+pcloudcc --user you@gmail.com --mountpoint /mnt/pcloud -p -s
+```
+This removes the old session data and forces a new login.
 
 ---
 
