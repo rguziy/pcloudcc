@@ -1,16 +1,18 @@
 # pCloudCC Docker Build and Installation
 
-This repository contains Dockerfile and build scripts to create `.deb` packages of pCloudCC for Ubuntu 18.04, 20.04, 22.04, and 24.04.
+This repository contains Dockerfile and build scripts to create `.deb` packages of pCloudCC for Ubuntu 16.04, 18.04, 20.04, 22.04, 24.04 and Debian 13.
 
 ## Using Pre-built .deb Packages
 
 The `.deb` packages are already available in the `out` folder of this repository:
 
-- `pcloudcc_2.0.0-1-ubuntu18_amd64.deb`
-- `pcloudcc_2.0.0-1-ubuntu20_amd64.deb`
-- `pcloudcc_2.0.0-1-ubuntu22_amd64.deb`
-- `pcloudcc_2.0.0-1-ubuntu24_amd64.deb`
-
+- `pcloudcc_2.0.1-ubuntu16_amd64.deb`
+- `pcloudcc_2.0.1-ubuntu18_amd64.deb`
+- `pcloudcc_2.0.1-ubuntu20_amd64.deb`
+- `pcloudcc_2.0.1-ubuntu22_amd64.deb`
+- `pcloudcc_2.0.1-ubuntu24_amd64.deb`
+- `pcloudcc_2.0.1-debian13_amd64.deb`
+  
 If you do not want to run the Docker build, you can directly install these packages on your system:
 
 ```bash
@@ -29,10 +31,12 @@ Run the build script to build `.deb` packages for all supported Ubuntu versions:
 
 This will create the following files in the `out` directory:
 
-- `pcloudcc_2.0.0-1-ubuntu18_amd64.deb`
-- `pcloudcc_2.0.0-1-ubuntu20_amd64.deb`
-- `pcloudcc_2.0.0-1-ubuntu22_amd64.deb`
-- `pcloudcc_2.0.0-1-ubuntu24_amd64.deb`
+- `pcloudcc_2.0.1-ubuntu16_amd64.deb`
+- `pcloudcc_2.0.1-ubuntu18_amd64.deb`
+- `pcloudcc_2.0.1-ubuntu20_amd64.deb`
+- `pcloudcc_2.0.1-ubuntu22_amd64.deb`
+- `pcloudcc_2.0.1-ubuntu24_amd64.deb`
+- `pcloudcc_2.0.1-debian13_amd64.deb`
 - `libpcloudcc_lib.so` is included inside each `.deb`
 
 ## Install FUSE Library
